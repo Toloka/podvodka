@@ -32,4 +32,4 @@ To run the script, use the following command:
 python gpt3_prompts_labeling.py --token <YOUR_OPENAI_API_TOKEN>
 ```
 
-This will generate image descriptions using the OpenAI API and save the results to the file ```result.csv``` (by default). The input file ```cleaned_discord_prompts.tsv``` will be used by default.
+This will generate image descriptions using the OpenAI API and save the results to the file ```result.csv``` (by default). The input file ```cleaned_discord_prompts.tsv``` will be used by default. The script also generates two files, ```train_strings.txt``` and ```test_strings.txt```, which are used for model training.
