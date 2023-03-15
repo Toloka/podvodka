@@ -1,6 +1,6 @@
 # Prompts Collection and Labeling
 
-This folder contains scripts and data to collect and label prompts for Self-Supervised Pretraining, the first step in RLHF (Reinforcement Learning with Human Feedback).
+This folder contains scripts and data to collect and label prompts for Self-Supervised Pretraining, the first step in RLHF (Reinforcement Learning from Human Feedback).
 
 The objective is to train a model to solve the problem of generating prompts: ''image description -> **prompt**''. For example, ''a cat -> **a photorealistic image of a cat, trending on artstation, cinematic lightning**''. Bold text indicates what the model needs to write. However, there is no existing dataset for this task, so we need to collect one.
 
