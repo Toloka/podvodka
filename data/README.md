@@ -1,14 +1,10 @@
 # Prompts Collection and Labeling
 
-This folder contains scripts and data to collect and label prompts for Self-Supervised Pretraining, the first step in RLHF (Reinforcement Learning from Human Feedback).
+This folder contains scripts and data to collect and label dataset for self-supervised pretraining, the first step in RLHF (Reinforcement Learning from Human Feedback). The objective is to train a model that makes prompts for image generation with Stable Diffusion. For example, ''a cat -> **a photorealistic image of a cat, trending on artstation, cinematic lightning**''. Bold text indicates what the model needs to write. However, there is no existing dataset for this task, so we need to collect one.
 
-The objective is to train a model to solve the problem of generating prompts: ''image description -> **prompt**''. For example, ''a cat -> **a photorealistic image of a cat, trending on artstation, cinematic lightning**''. Bold text indicates what the model needs to write. However, there is no existing dataset for this task, so we need to collect one.
-
-## Data Collection
+## Data collection and cleaning
 
 We collect prompts from `#dreambot-1`--`#dreambot-25` channels on the [Stable Diffusion Discord server](https://discord.gg/stablediffusion). Users generate images based on their own prompts in these chats while allowing other users to view them. We export messages from these chats using [DiscordChatExporter](https://github.com/Tyrrrz/DiscordChatExporter) and store them in `sd_dreambots_dotnet_raw_output.zip`.
-
-## Data Cleaning
 
 After collecting the chats, we clean the data and prepare it for labeling using `data_cleaning.ipynb`. The resulting cleaned data is stored in `cleaned_discord_prompts.tsv`.
 
