@@ -14,7 +14,7 @@ After collecting the chats, we clean the data and prepare it for labeling using 
 
 ## Labeling
 
-We label the collected prompts using GPT-3 via OpenAI API with the `gpt3_prompts_labeling.py` script. This script generates image descriptions based on the prompts provided in the `cleaned_prompts.tsv` file. The generated descriptions are saved to a CSV file.
+We label the collected prompts using GPT-3 via OpenAI API with the `gpt3_prompts_labeling.py` script. This script generates image descriptions based on the prompts provided in the `cleaned_discord_prompts.tsv` file. The generated descriptions are saved to a CSV file.
 
 The script logs all API usage information to the ```api_requests.log``` file, including the labeled Discord prompts. If the script encounters any errors during execution, you can restart it and it will skip any previously labeled strings to avoid incurring additional costs.
 
