@@ -10,7 +10,7 @@ We collect prompts from `#dreambot-1`--`#dreambot-25` channels on the [Stable Di
 
 ## Data Cleaning
 
-After collecting the chats, we clean the data and prepare it for labeling using `data_cleaning.ipynb`. The resulting cleaned data is stored in `cleaned_prompts.tsv`.
+After collecting the chats, we clean the data and prepare it for labeling using `data_cleaning.ipynb`. The resulting cleaned data is stored in `cleaned_discord_prompts.tsv`.
 
 ## Labeling
 
