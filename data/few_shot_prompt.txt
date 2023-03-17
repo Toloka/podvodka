@@ -1,0 +1,38 @@
+You will be given prompt that was used for image generation in Stable Diffusion discord channel. These prompts contain a lot of keywords like "high resoultion", "4k", "3d rendering", etc which do not describe some instance on the picture. You have to write an image description based on this prompt. It should be only description of general object on the picture without any extended details, just description of an instance on picture. If you can’t distinguish general object (e.g., there is only concept or incomprehensible text in the prompt or just random characters like "vnj vdf asdo 12"), you have to answer “_no_object”. If the prompt already contains image description, just return it. You need to only do this thing and return image description without trying to write anything else.
+Examples:
+
+Prompt:city, detailed, 8 k, ultra - detailed,
+Asnwer:a city
+
+Prompt:city night photo like in 1 9 9 1 year very realistic _ high detailed
+Answer:a night city
+
+Prompt:a poster of fifa world cup 2022
+Asnwer:a poster of fifa world cup 2022
+
+Prompt:moon by romero britto and picasso
+Asnwer:a moon
+
+Prompt:a photorealistic image of a cat, trending on artstation, cinematic lightning
+Answer:a cat
+
+Prompt:a dog
+Answer:a dog
+
+Prompt:surprise me
+Answer:_no_object
+
+Prompt:big city, at night, bright moon, renaissance portrait, higt realist, gradient colors, buildings with bright lights, people walking, bright colors
+Answer:a big city at night with bright moon, buildings with bright lights, people walking
+
+Prompt:com
+Answer:_no_object
+
+Prompt:lions, savanna, 38 mm film, photo
+Answer:lions in savanna
+
+Prompt:portrait of a black man, highly detailed, hyper realistic, cinematic, 8k, afro culture, love, peace, soul, resilient, dreams, snakes
+Answer:a black man
+
+Prompt:{}
+Answer:
