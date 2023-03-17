@@ -1,0 +1,48 @@
+command:
+  - python
+  - ${program}
+  - ${args}
+method: bayes
+metric:
+  goal: minimize
+  name: eval/loss
+parameters:
+  do_eval:
+    value: true
+  do_train:
+    value: true
+  eval_steps:
+    value: 100
+  evaluation_strategy:
+    value: steps
+  learning_rate:
+    distribution: log_uniform_values
+    max: 0.001
+    min: 1e-06
+  logging_steps:
+    value: 5
+  model_name_or_path:
+    value: gpt2-large
+  num_train_epochs:
+    value: 6
+  output_dir:
+    value: gpt2-sweep
+  per_device_eval_batch_size:
+    value: 4
+  per_device_train_batch_size:
+    value: 4
+  preprocessing_num_workers:
+    value: 4
+  report_to:
+    value: wandb
+  train_file:
+    value: train_strings.txt
+  validation_file:
+    value: val_strings.txt
+  warmup_steps:
+    value: 100
+  weight_decay:
+    distribution: log_uniform_values
+    max: 0.01
+    min: 1e-08
+program: run_clm.py
