@@ -2,7 +2,7 @@
 
 We fine-tune a `gpt2-large` in the following setting:
 
-1. We constuct a dataset containig strings `[BOS]image description = prompt<|endoftext|>` following the best practices for fine-tuning GPT-2 for seq2seq tasks
+1. We constuct a dataset containig strings `image description</s>prompt<|endoftext|>`
 2. We use a standard LM fine-tuning pipeline from the HuggingFace Transformers examples.
 
 You can find the modified version of the fine-tuning script in the `run_clm.py` file.
