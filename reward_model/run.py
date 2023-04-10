@@ -97,7 +97,6 @@ def sample_aux_pairs(df):
 
 
 class Dataset(torch.utils.data.Dataset):
-
     def __init__(self, df, tokenizer):
 
         self.labels = [label for label in df['y']]
@@ -114,7 +113,6 @@ class Dataset(torch.utils.data.Dataset):
         return np.array(self.labels[idx])
 
     def __getitem__(self, idx):
-
         batch_left_texts = self.left_texts[idx]
         batch_right_texts = self.right_texts[idx]
         batch_y = self.get_batch_labels(idx)
@@ -125,7 +123,6 @@ class Dataset(torch.utils.data.Dataset):
 class RobertaPairwiseRanker(nn.Module):
 
     def __init__(self):
-
         super(RobertaPairwiseRanker, self).__init__()
         self.bert = AutoModelForSequenceClassification.from_pretrained('distilroberta-base', num_labels=1)
 
