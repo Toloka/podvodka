@@ -4,6 +4,6 @@
 
 Fine-tuned GPT-2 Large: https://huggingface.co/toloka/gpt2-large-supervised-prompt-writing.
 
-Use the following template: `[BOS]image description = `
+Use the following template: `image description</s>`
 
-W&B report of the final model: https://wandb.ai/toloka-research/gpt-2-self-supervised-prompt-writing/runs/c8u2atjy
+W&B report of the final model: https://wandb.ai/toloka-research/gpt-2-self-supervised-prompt-writing/runs/byxqftxf
