@@ -1,0 +1,130 @@
+{
+    "view": {
+      "type": "view.list",
+      "items": [
+        {
+          "type": "view.text",
+          "content": {
+            "type": "data.input",
+            "path": "prompt"
+          }
+        },
+        {
+          "type": "layout.columns",
+          "items": [
+            {
+              "type": "view.list",
+              "items": [
+                {
+                  "type": "view.image",
+                  "label": "A",
+                  "url": {
+                    "type": "data.input",
+                    "path": "left_0"
+                  }
+                },
+                {
+                  "type": "view.image",
+                  "url": {
+                    "type": "data.input",
+                    "path": "left_1"
+                  }
+                },
+                {
+                  "type": "view.image",
+                  "url": {
+                    "type": "data.input",
+                    "path": "left_2"
+                  }
+                },
+                {
+                  "type": "view.image",
+                  "url": {
+                    "type": "data.input",
+                    "path": "left_3"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "view.list",
+              "items": [
+                {
+                  "type": "view.image",
+                  "label": "B",
+                  "url": {
+                    "type": "data.input",
+                    "path": "right_0"
+                  }
+                },
+                {
+                  "type": "view.image",
+                  "url": {
+                    "type": "data.input",
+                    "path": "right_1"
+                  }
+                },
+                {
+                  "type": "view.image",
+                  "url": {
+                    "type": "data.input",
+                    "path": "right_2"
+                  }
+                },
+                {
+                  "type": "view.image",
+                  "url": {
+                    "type": "data.input",
+                    "path": "right_3"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "field.radio-group",
+          "label": "Which set of images is aesthetically better?",
+          "options": [
+            {
+              "label": "A",
+              "value": "left"
+            },
+            {
+              "label": "B",
+              "value": "right"
+            }
+          ],
+          "data": {
+            "type": "data.output",
+            "path": "result"
+          },
+          "validation": {
+            "type": "condition.required",
+            "hint": "Please choose one of the options"
+          }
+        }
+      ]
+    },
+    "plugins": [
+      {
+        "1": {
+          "type": "action.set",
+          "data": {
+            "type": "data.output",
+            "path": "result"
+          },
+          "payload": "left"
+        },
+        "2": {
+          "type": "action.set",
+          "data": {
+            "type": "data.output",
+            "path": "result"
+          },
+          "payload": "right"
+        },
+        "type": "plugin.hotkeys"
+      }
+    ]
+  }
