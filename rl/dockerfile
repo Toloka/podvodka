@@ -1,0 +1,33 @@
+FROM nvidia/cuda:11.7.0-devel-ubuntu20.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update 
+RUN apt update
+RUN apt install -y wget curl && apt clean && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt install software-properties-common -y
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt install python3.10 -y
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
+RUN python3.10 -m pip install torch torchvision torchaudio
+
+RUN apt update && apt install -y git
+
+RUN python3.10 -m pip install ninja
+RUN python3.10 -m pip install -v -U git+https://github.com/facebookresearch/xformers.git@main#egg=xformers
+
+RUN apt update && apt install libgl1 -y
+
+WORKDIR /src
+RUN python3.10 -m pip install transformers huggingface_hub
+RUN python3.10 -c 'print()'
+RUN python3.10 -c 'from huggingface_hub import HfFolder; HfFolder.save_token("<HF_TOKEN>")'
+RUN python3.10 -c 'from transformers import AutoModel, AutoTokenizer; model = AutoModel.from_pretrained("toloka/gpt2-large-supervised-prompt-writing");tok = AutoTokenizer.from_pretrained("toloka/gpt2-large-supervised-prompt-writing")'
+
+
+RUN git clone https://github.com/CarperAI/trlx.git && cd ./trlx && python3.10 -m pip install .
+RUN rm -rf ./trlx
+
+COPY . /src
+
+ENTRYPOINT ["bash"]
