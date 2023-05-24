@@ -1,4 +1,4 @@
-# BestPromptsV2
+# Podvodka: Training a Language Model to Write Prompts for Stable Diffusion
 
 # Step 1:
 
